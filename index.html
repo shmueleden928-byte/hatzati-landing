@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הצעתי — הצעות מחיר לבעלי מקצוע</title>
+<meta name="description" content="הצעת מחיר מקצועית וממותגת בשלושים שניות, מהטלפון, באתר העבודה. לשיפוצניקים ובעלי מקצוע בישראל.">
+
+<meta property="og:title" content="הצעתי — הצעות מחיר בשלושים שניות">
+<meta property="og:description" content="תפסיק לכתוב הצעות מחיר בערבים. תגיד מה עשית ומה המחיר, וקבל מסמך מקצועי עם הלוגו שלך.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Assistant:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CONFIGURE BEFORE PUBLISHING — see landing/README.md
+   ============================================================ */
+
+:root{
+  --ink:#16181d;
+  --ink-2:#1e2128;
+  --ink-3:#282c35;
+  --line:#363b46;
+  --paper:#f4f3ef;
+  --paper-dim:#a0a4ae;
+  --hi:#ffc53d;
+  --hi-deep:#e0a800;
+  --ok:#5fbf7f;
+  --err:#ff8a80;
+  --display:"Suez One",Georgia,serif;
+  --body:"Assistant","Arial Hebrew",Arial,sans-serif;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.6;
+  overflow-x:hidden;
+  /* Faint blueprint grid. Sets the tone before a single word is read. */
+  background-image:
+    linear-gradient(var(--ink-2) 1px,transparent 1px),
+    linear-gradient(90deg,var(--ink-2) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+
+.wrap{max-width:680px;margin:0 auto;padding:0 22px}
+
+/* ---------- hero ---------- */
+
+.hero{padding:56px 0 64px;position:relative}
+
+.tag{
+  display:inline-block;
+  font-size:13px;font-weight:800;letter-spacing:.08em;
+  color:var(--ink);background:var(--hi);
+  padding:5px 12px;margin-bottom:26px;
+  transform:rotate(-1.2deg);
+}
+
+h1{
+  font-family:var(--display);
+  font-size:clamp(38px,11vw,62px);
+  line-height:1.04;
+  font-weight:400;
+  margin-bottom:22px;
+}
+h1 em{font-style:normal;color:var(--hi);display:block}
+
+.lede{font-size:19px;color:var(--paper-dim);max-width:30em;margin-bottom:34px}
+
+/* ---------- buttons ---------- */
+
+.cta{
+  display:inline-block;
+  background:var(--hi);color:var(--ink);
+  font-weight:800;font-size:18px;
+  padding:17px 30px;
+  border:none;cursor:pointer;
+  box-shadow:5px 5px 0 var(--hi-deep);
+  transition:transform .12s ease,box-shadow .12s ease;
+  text-decoration:none;
+}
+.cta:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--hi-deep)}
+.cta:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--hi-deep)}
+.cta:focus-visible{outline:3px solid var(--paper);outline-offset:3px}
+
+/* ---------- sections ---------- */
+
+section{padding:52px 0;border-top:1px solid var(--line)}
+
+h2{
+  font-family:var(--display);
+  font-size:clamp(26px,7vw,36px);
+  font-weight:400;line-height:1.15;
+  margin-bottom:26px;
+}
+
+/* ---------- pain ---------- */
+
+.pain{list-style:none;display:grid;gap:14px}
+.pain li{
+  background:var(--ink-2);
+  border-right:4px solid var(--line);
+  padding:15px 18px;
+  color:var(--paper-dim);
+}
+.pain li b{color:var(--paper);font-weight:600}
+
+/* ---------- steps ---------- */
+
+.steps{list-style:none;counter-reset:s;display:grid;gap:22px}
+.steps li{
+  counter-increment:s;
+  display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;
+}
+.steps li::before{
+  content:counter(s);
+  font-family:var(--display);font-size:30px;
+  color:var(--hi);
+  border:2px solid var(--line);
+  width:52px;height:52px;
+  display:flex;align-items:center;justify-content:center;
+}
+.steps h3{font-size:19px;font-weight:800;margin-bottom:3px}
+.steps p{color:var(--paper-dim);font-size:16px}
+
+/* ---------- gift ---------- */
+
+.gift{
+  background:var(--ink-2);
+  border:2px dashed var(--line);
+  padding:26px 22px;
+}
+.gift h2{margin-bottom:14px}
+.gift p{color:var(--paper-dim);margin-bottom:22px}
+
+/* ---------- form ---------- */
+
+.field{margin-bottom:18px}
+label{display:block;font-weight:600;font-size:15px;margin-bottom:7px}
+input,select{
+  width:100%;min-height:54px;
+  background:var(--ink-2);
+  border:1px solid var(--line);
+  color:var(--paper);
+  font:inherit;padding:0 15px;
+}
+input:focus,select:focus{outline:none;border-color:var(--hi)}
+input::placeholder{color:#6b7078}
+
+.consent{
+  display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start;
+  background:var(--ink-2);border:1px solid var(--line);
+  padding:15px;margin-bottom:22px;
+}
+.consent input{width:24px;height:24px;min-height:0;margin-top:2px;accent-color:var(--hi)}
+.consent span{font-size:14px;color:var(--paper-dim);line-height:1.5}
+
+.err{color:var(--err);font-size:14px;margin-top:7px;display:none}
+.err.show{display:block}
+
+.done{
+  display:none;
+  background:var(--ink-2);border-right:4px solid var(--ok);
+  padding:22px;
+}
+.done.show{display:block}
+.done b{color:var(--ok);display:block;font-size:20px;margin-bottom:6px}
+
+/* ---------- footer ---------- */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:34px 0 46px;
+  color:#6b7078;font-size:14px;
+}
+footer a{color:var(--paper-dim)}
+
+/* ---------- entrance ---------- */
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{opacity:0;transform:translateY(14px);animation:rise .55s ease forwards}
+  .rise:nth-child(1){animation-delay:.05s}
+  .rise:nth-child(2){animation-delay:.14s}
+  .rise:nth-child(3){animation-delay:.23s}
+  .rise:nth-child(4){animation-delay:.32s}
+  @keyframes rise{to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="tag rise">בקרוב · הרשמה מוקדמת</div>
+    <h1 class="rise">תפסיק לכתוב הצעות מחיר <em>בעשר בלילה.</em></h1>
+    <p class="lede rise">
+      תגיד מה העבודה ומה המחיר — וקבל הצעת מחיר מקצועית עם הלוגו שלך,
+      מוכנה לשליחה בוואטסאפ. שלושים שניות, מהטלפון, באתר העבודה.
+    </p>
+    <a class="cta rise" href="#join">אני רוצה להיות מהראשונים</a>
+  </header>
+
+  <section>
+    <h2>מכיר את זה?</h2>
+    <ul class="pain">
+      <li>סיימת יום עבודה, ואתה יושב בערב <b>לכתוב הצעת מחיר בוורד</b>.</li>
+      <li>או ששלחת מספר יבש בוואטסאפ, ו<b>הלקוח לקח את זה לשיפוצניק אחר</b>.</li>
+      <li>לפעמים פשוט לא שלחת — <b>והעבודה הלכה למישהו שכן שלח</b>.</li>
+      <li>ההצעות שלך נראות כמו של כולם, <b>ואין שום סיבה שיבחרו דווקא בך</b>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>איך זה עובד</h2>
+    <ol class="steps">
+      <li>
+        <div>
+          <h3>אומר מה עשית</h3>
+          <p>"החלפת קרמיקה, שישה מטר, מאתיים שמונים למטר, כולל חומרים."</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>בודק ומאשר</h3>
+          <p>רואה את הסעיפים והמחירים על המסך, מתקן מה שצריך. שום דבר לא נשלח בלי אישור שלך.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>שולח בוואטסאפ</h3>
+          <p>מסמך מעוצב עם הלוגו, הפרטים והתנאים שלך. הלקוח פותח ורואה מקצוען.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="gift">
+      <h2>בינתיים — תבנית הצעת מחיר, חינם</h2>
+      <p>
+        תבנית מוכנה לשיפוצניקים, בעברית, מעוצבת נכון. תוריד, תמלא, תשלח.
+        שלח לך אותה ברגע שתירשם — בלי תנאים.
+      </p>
+      <a class="cta" href="#join">שלחו לי את התבנית</a>
+    </div>
+  </section>
+
+  <section id="join">
+    <h2>הרשמה מוקדמת</h2>
+
+    <form id="joinForm" novalidate>
+      <div class="field">
+        <label for="name">איך קוראים לך?</label>
+        <input id="name" name="name" type="text" autocomplete="name" placeholder="דוד">
+        <p class="err" id="err-name"></p>
+      </div>
+
+      <div class="field">
+        <label for="trade">מה המקצוע שלך?</label>
+        <select id="trade" name="trade">
+          <option value="">בחר…</option>
+          <option value="renovation">שיפוצים</option>
+          <option value="electrical">חשמל</option>
+          <option value="plumbing">אינסטלציה</option>
+          <option value="hvac">מיזוג אוויר</option>
+          <option value="drywall">גבס וצבע</option>
+          <option value="flooring">ריצוף</option>
+          <option value="aluminium">אלומיניום</option>
+          <option value="other">אחר</option>
+        </select>
+        <p class="err" id="err-trade"></p>
+      </div>
+
+      <div class="field">
+        <label for="phone">טלפון נייד</label>
+        <input id="phone" name="phone" type="tel" inputmode="numeric"
+               autocomplete="tel" placeholder="050-1234567">
+        <p class="err" id="err-phone"></p>
+      </div>
+
+      <!--
+        Explicit, unticked consent. Israel's anti-spam statute (Communications
+        Act s.30A) requires prior consent before sending marketing, and applies
+        to businesses too. A list gathered without this cannot legally be
+        contacted, which would make collecting it pointless.
+      -->
+      <div class="consent">
+        <input id="consent" name="consent" type="checkbox">
+        <span>
+          <label for="consent" style="display:inline;font-weight:600;color:var(--paper)">אני מאשר לקבל עדכונים</label>
+          על ההשקה ואת התבנית החינמית, בוואטסאפ או ב־SMS.
+          אפשר להסיר את עצמי בכל רגע.
+        </span>
+      </div>
+      <p class="err" id="err-consent"></p>
+
+      <button class="cta" type="submit" id="submitBtn">שמור לי מקום</button>
+      <p class="err" id="err-form"></p>
+    </form>
+
+    <div class="done" id="done">
+      <b>נרשמת.</b>
+      נשלח לך את התבנית ונעדכן ברגע שנפתח. תודה שאתה מהראשונים.
+    </div>
+  </section>
+
+  <footer>
+    <p>הצעתי — הצעות מחיר לבעלי מקצוע בישראל.</p>
+    <p style="margin-top:8px">
+      הפרטים שלך משמשים רק ליצירת קשר בנוגע למוצר, ולא מועברים לאף אחד.
+      להסרה בכל עת: <a href="mailto:hatzati.app@gmail.com">hatzati.app@gmail.com</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ==========================================================
+  // CONFIGURE: paste the Google Form ids here. See landing/README.md
+  // Until FORM_ACTION is set, submissions are held locally and the
+  // page says so honestly rather than pretending to have saved them.
+  // ==========================================================
+  var FORM_ACTION = "";
+  var FIELD_IDS = { name: "", trade: "", phone: "" };
+
+  var form = document.getElementById("joinForm");
+  var done = document.getElementById("done");
+  var btn = document.getElementById("submitBtn");
+
+  function setError(id, message) {
+    var el = document.getElementById("err-" + id);
+    el.textContent = message || "";
+    el.classList.toggle("show", Boolean(message));
+  }
+
+  function normalisePhone(raw) {
+    var digits = raw.replace(/[\s-]/g, "");
+    return /^05\d{8}$/.test(digits) ? digits : null;
+  }
+
+  function validate(values) {
+    var errors = {};
+    if (values.name.trim().length === 0) errors.name = "צריך שם";
+    if (values.trade.length === 0) errors.trade = "צריך לבחור מקצוע";
+    if (values.phone.trim().length === 0) {
+      errors.phone = "צריך מספר טלפון";
+    } else if (normalisePhone(values.phone) === null) {
+      errors.phone = "מספר נייד לא תקין";
+    }
+    // Consent is a hard gate, never a default.
+    if (!values.consent) errors.consent = "בלי אישור אי אפשר לשלוח לך כלום";
+    return errors;
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var values = {
+      name: document.getElementById("name").value,
+      trade: document.getElementById("trade").value,
+      phone: document.getElementById("phone").value,
+      consent: document.getElementById("consent").checked
+    };
+
+    ["name", "trade", "phone", "consent", "form"].forEach(function (id) {
+      setError(id, "");
+    });
+
+    var errors = validate(values);
+    var firstBad = Object.keys(errors)[0];
+    if (firstBad) {
+      Object.keys(errors).forEach(function (id) { setError(id, errors[id]); });
+      var el = document.getElementById(firstBad);
+      if (el && el.focus) el.focus();
+      return;
+    }
+
+    if (FORM_ACTION === "") {
+      setError("form", "הטופס עדיין לא חובר. ראה landing/README.md");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "שולח…";
+
+    var body = new FormData();
+    body.append(FIELD_IDS.name, values.name.trim());
+    body.append(FIELD_IDS.trade, values.trade);
+    body.append(FIELD_IDS.phone, normalisePhone(values.phone));
+
+    // Google Forms does not send CORS headers, so the response is opaque and
+    // cannot be inspected. no-cors still delivers the submission.
+    fetch(FORM_ACTION, { method: "POST", mode: "no-cors", body: body })
+      .then(function () {
+        form.style.display = "none";
+        done.classList.add("show");
+        done.scrollIntoView({ behavior: "smooth", block: "center" });
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = "שמור לי מקום";
+        setError("form", "משהו השתבש. נסה שוב בעוד רגע.");
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
