@@ -334,8 +334,12 @@ footer a{color:var(--paper-dim)}
   // Until FORM_ACTION is set, submissions are held locally and the
   // page says so honestly rather than pretending to have saved them.
   // ==========================================================
-  var FORM_ACTION = "";
-  var FIELD_IDS = { name: "", trade: "", phone: "" };
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdubcZPF1x5YwuT3LHK7iBFT6V-p_qNJdEVntQWfecXwAnEtQ/formResponse";
+  var FIELD_IDS = {
+    name: "entry.1118049993",
+    trade: "entry.1755864840",
+    phone: "entry.23431028"
+  };
 
   var form = document.getElementById("joinForm");
   var done = document.getElementById("done");
@@ -402,8 +406,10 @@ footer a{color:var(--paper-dim)}
     body.append(FIELD_IDS.trade, values.trade);
     body.append(FIELD_IDS.phone, normalisePhone(values.phone));
 
-    // Google Forms does not send CORS headers, so the response is opaque and
-    // cannot be inspected. no-cors still delivers the submission.
+    // Google Forms sends no CORS headers, so the response is opaque: a
+    // rejected submission is indistinguishable from an accepted one here.
+    // The page therefore cannot self-verify. Confirm delivery by submitting
+    // once and checking the responses sheet — see landing/README.md.
     fetch(FORM_ACTION, { method: "POST", mode: "no-cors", body: body })
       .then(function () {
         form.style.display = "none";
